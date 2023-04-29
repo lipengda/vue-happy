@@ -1,3 +1,5 @@
 <script setup lang="ts"></script>
 
-<template>Home</template>
+<template>
+    <n-button></n-button>
+</template>
