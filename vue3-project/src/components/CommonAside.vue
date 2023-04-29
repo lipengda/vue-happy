@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
 const list = [
   {
-    path: '/user',
-    name: 'user',
-    label: '用户管理',
+    path: '/home',
+    name: 'home',
+    label: '首页',
     icon: 'user',
-    url: '/user'
+    url: '/home'
   },
   {
     label: '其它',
@@ -15,6 +17,12 @@ const list = [
     url: 'other'
   }
 ]
+const router = useRouter()
+const handleClick = (item: { name: any }) => {
+  router.push({
+    name: item.name
+  })
+}
 </script>
 
 <template>
@@ -26,7 +34,7 @@ const list = [
     active-text-color="#ffd04b"
   >
     <h3>后台管理</h3>
-    <el-menu-item :index="item.path + ''" v-for="item in list" :key="item.label">
+    <el-menu-item :index="item.path + ''" v-for="item in list" :key="item.label" @click="handleClick(item)">
       <component class="icons" :is="item.icon"></component>
       <span>{{ item.label }}</span>
     </el-menu-item>

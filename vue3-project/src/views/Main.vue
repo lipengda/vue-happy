@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import type { RouterView } from 'vue-router';
 import CommonAside from '../components/CommonAside.vue'
+import CommonHeader from '@/components/CommonHeader.vue';
 </script>
 
 <template>
@@ -9,8 +11,12 @@ import CommonAside from '../components/CommonAside.vue'
         <common-aside></common-aside>
       </el-aside>
       <el-container>
-        <el-header>Header</el-header>
-        <el-main>Main</el-main>
+        <el-header>
+          <common-header></common-header>
+        </el-header>
+        <el-main>
+          <RouterView></RouterView>
+        </el-main>
       </el-container>
     </el-container>
   </div>
