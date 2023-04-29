@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import { useRouter } from 'vue-router';
+let getImgSrc = () => {
+    return "https://img0.baidu.com/it/u=779040798,3900256075&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"
+}
+const router = useRouter()
+const handleClick = () => {
+  router.push('/login')
+}
+</script>
+
 <template>
     <el-header>
         <div class="l-content">
@@ -15,7 +26,7 @@
                 </span>
                 <template #dropdown>
                     <el-dropdown-menu>
-                        <el-dropdown-item>我的</el-dropdown-item>
+                        <el-dropdown-item @click="handleClick()">我的</el-dropdown-item>
                         <el-dropdown-item>退出</el-dropdown-item>
                     </el-dropdown-menu>
                 </template>
@@ -23,12 +34,6 @@
         </div>
     </el-header>
 </template>
-
-<script setup lang="ts">
-let getImgSrc = () => {
-    return "https://img0.baidu.com/it/u=779040798,3900256075&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"
-}
-</script>
 
 <style lang="less" scoped>
 header {
