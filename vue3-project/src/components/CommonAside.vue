@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router'
 
 const list = [
   {
@@ -34,7 +34,12 @@ const handleClick = (item: { name: any }) => {
     active-text-color="#ffd04b"
   >
     <h3>后台管理</h3>
-    <el-menu-item :index="item.path + ''" v-for="item in list" :key="item.label" @click="handleClick(item)">
+    <el-menu-item
+      :index="item.path + ''"
+      v-for="item in list"
+      :key="item.label"
+      @click="handleClick(item)"
+    >
       <component class="icons" :is="item.icon"></component>
       <span>{{ item.label }}</span>
     </el-menu-item>

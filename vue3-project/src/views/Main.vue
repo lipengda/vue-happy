@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { RouterView } from 'vue-router';
+import type { RouterView } from 'vue-router'
 import CommonAside from '../components/CommonAside.vue'
-import CommonHeader from '@/components/CommonHeader.vue';
+import CommonHeader from '@/components/CommonHeader.vue'
 </script>
 
 <template>
